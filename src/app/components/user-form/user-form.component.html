@@ -1,0 +1,27 @@
+<div class="form-container">
+    <h2>Registro de Usuario</h2>
+
+    <form (ngSubmit)="submitForm()" class="form">
+        <div class="input-group">
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="userObj.name" name="name" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Edad</mat-label>
+                <input matInput type="number" [(ngModel)]="userObj.age" name="age" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="userObj.email" name="email" required />
+            </mat-form-field>
+
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" class="submit-button">
+            Enviar
+        </button>
+    </form>
+</div>
