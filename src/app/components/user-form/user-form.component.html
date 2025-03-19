@@ -9,15 +9,33 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Apellido</mat-label>
+                <input matInput [(ngModel)]="userObj.lastname" name="lastname" />
+            </mat-form-field>
+        </div>
+
+        <div class="input-group">
+            <mat-form-field appearance="outline" class="input-field">
                 <mat-label>Edad</mat-label>
                 <input matInput type="number" [(ngModel)]="userObj.age" name="age" required />
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="input-field">
                 <mat-label>Email</mat-label>
-                <input matInput [(ngModel)]="userObj.email" name="email" required />
+                <input matInput type="email" [(ngModel)]="userObj.email" name="email" required />
+            </mat-form-field>
+        </div>
+
+        <div class="input-group">
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" [(ngModel)]="userObj.password" name="password" required />
             </mat-form-field>
 
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Confirmar Contraseña</mat-label>
+                <input matInput type="password" [(ngModel)]="userObj.confirmPassword" name="confirmPassword" required />
+            </mat-form-field>
         </div>
 
         <button mat-raised-button color="primary" type="submit" class="submit-button">

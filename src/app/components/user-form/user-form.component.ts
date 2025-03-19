@@ -31,14 +31,20 @@ export class UserFormComponent {
 
   submitForm() {
 
-    const { name, age, email } = this.userObj;
+    
 
 
     if (this.userObj.name && this.userObj.age !== null && this.userObj.email) {
-      this.userSubmitted.emit({name: name, age: age, email: email }); //eniva datos al padre appComponent
-      this.userObj.name = '';
-      this.userObj.age = null;
-      this.userObj.email = '';
+      this.userSubmitted.emit(this.userObj); //env dat fat app.com
+      this.userObj = {
+        name: '',
+        lastname: '',
+        age: 0,
+        email: '',
+        password: '',
+        confirmPassword: '',
+        languages: []
+      };
     }
   }
 }
