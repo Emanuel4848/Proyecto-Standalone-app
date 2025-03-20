@@ -1,12 +1,4 @@
-<div class="app-container">
-    <app-user-form-prime-flex (userSubmitted)="onUserSubmitted($event)"></app-user-form-prime-flex>
-    <app-display-data *ngIF = "user.name && user.lastname !== null && user.age && user.email && user.password && user.confirmPassword" [user] = "user"></app-display-data>
-</div>
 
 
 
-<div clas="app-container">
-    <app-user-form (userSubmitted)="onUserSubmitted($event)"></app-user-form>
-    <app-display-data *ngIf = "user.name && user.lastname !== null && user.age && user.email && user.password && user.confirmPassword" [user] = "user"></app-display-data>  
-</div>
-<router-outlet />
+<router-outlet/>

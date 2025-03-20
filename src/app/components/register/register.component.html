@@ -1,1 +1,72 @@
-<p>register works!</p>
+<div class="grid">
+    <div class="col-3"></div>
+    <mat-card class="col-6">
+        <div class="grid">
+            <div class="col-3"></div>
+            <div class="col-6" style="justify-content: center; align-items: center; display: flex;">
+                <h2>Registro de Usuario</h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <form (ngSubmit)="submitForm()">
+            <div class="grid">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [(ngModel)]="userObj.name" name="name" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput [(ngModel)]="userObj.lastname" name="lastName" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Edad</mat-label>
+                        <input matInput type="number" [(ngModel)]="userObj.age" name="age" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="userObj.email" name="email" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" [(ngModel)]="userObj.password" name="password" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" style="width: 100% !important;">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput type="password" [(ngModel)]="userObj.confirmPassword" name="confirmPassword" required />
+                    </mat-form-field>
+                </div>
+                <div class="col-3"></div>
+
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <button mat-raised-button color="primary" type="submit" style="width: 100%;">
+                        Enviar
+                    </button>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </form>
+    </mat-card>
+</div>
