@@ -1,1 +1,25 @@
-<p>login workkks!</p>
+<div class="grid">
+    <div class="col-3"></div>
+    <mat-card class="col-6">
+      <h2>Iniciar Sesión</h2>
+      <form (ngSubmit)="login()"> 
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="userObj.username" name="username" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" [(ngModel)]="userObj.password" name="password" required />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" style="width: 100%;">
+          Ingresar
+        </button>
+      </form>
+      <p style="text-align: center;">
+        <a routerLink="/register">¿No tienes cuenta? Regístrate</a>
+      </p>
+    </mat-card>
+    <div class="col-3"></div>
+  </div>
