@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
-import { userDTO } from '../../interfaces/userDTO';
-
+import { User, userDTO } from '../../interfaces/userDTO';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -16,6 +16,20 @@ import { userDTO } from '../../interfaces/userDTO';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+
+  private usersService = inject(UserService); //inyecta el comportamentiendo ed la clase UserService(osea getAll)
+  users: any[] = [];
+
+  constructor() {
+    this.usersService.getAll().subscribe((data: User[]) => {
+      console.log('data', data);
+      this.users = data;
+    });
+  }
+
+
+
+
 
     userObj: userDTO = {
       name: '',

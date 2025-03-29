@@ -12,3 +12,14 @@ export interface Language{
     name: string;
     code: string;
 }
+
+export interface User {
+    id: number;
+    username: string;
+    names: string;
+    lastnames: string;
+    age: number;
+    gender: string;
+    password: string;
+    email: string;
+}
