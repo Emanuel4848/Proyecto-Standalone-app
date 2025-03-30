@@ -24,4 +24,11 @@ export interface User {
     gender: string;
     password: string;
     email: string;
+
+}
+
+
+export interface Login{
+    username: string;
+    password: string;
 }

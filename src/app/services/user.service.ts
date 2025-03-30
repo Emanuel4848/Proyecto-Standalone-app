@@ -2,6 +2,7 @@ import { inject,Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/userDTO';
+import { Login } from '../interfaces/userDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,7 @@ export class UserService {
   }
 
 
+  login(user: Login): Observable<any>{
+    return this.http.post<any>(this.apiUrl + '/login', user);
+  }
 }

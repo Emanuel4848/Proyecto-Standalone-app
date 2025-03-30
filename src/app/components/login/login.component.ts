@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  //para navegar entre rutas
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { loginDTO } from '../../interfaces/loginDTO';
 import { RouterModule } from '@angular/router';
+import { UserService } from '../../services/user.service'; 
+import { Login } from '../../interfaces/userDTO';  
 
 @Component({
   selector: 'app-login',
@@ -18,26 +19,53 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent {
 
-  userObj: loginDTO = {
+  userObj: Login = {
     username: '',
     password: ''
   };
 
 
-  private readonly defauluser: loginDTO = {
-    username: 'Ema',
-    password: '123'
-  };
+  constructor(private router: Router, private userService: UserService) {}
 
-
-
-  constructor(private router: Router) {}
-
-  login() {
-    if (this.userObj.username === this.defauluser.username && this.userObj.password === this.defauluser.password) {
-      this.router.navigate(['dashboard']); 
-    } else {
-      alert('Usuario o contraseña incorrectos');
-    }
+  login(){
+    //aca se llama al servicio de login con datos edl usuario
+    this.userService.login(this.userObj).subscribe({
+      next: (data) => {
+        console.log('Login exitoso', data);
+        //pal dashboard
+        this.router.navigate (['dashboard'])
+      },
+      error: (err) => {
+        console.error('Error en el login: ', err);
+        alert('Usuario o contraseña incocrrectos')
+      }
+    });
   }
 }
+
+
+
+
+
+
+
+
+
+
+  //private readonly defauluser: loginDTO = {
+    //username: 'Ema',
+   // password: '123'
+  //};
+
+
+
+  //constructor(private router: Router) {}
+
+  //login() {
+    //if (this.userObj.username === this.defauluser.username && this.userObj.password === this.defauluser.password) {
+      //this.router.navigate(['dashboard']); 
+    //} else {
+      //alert('Usuario o contraseña incorrectos');
+    //}
+ // }
+//}
