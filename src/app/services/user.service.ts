@@ -8,11 +8,18 @@ import { User } from '../interfaces/userDTO';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:3000/api/users/'; //Mi API REST
+  private apiUrl = 'http://localhost:3000/api/users'; //Mi API REST
   private http = inject(HttpClient); //inicializo el httpClient para poder hacer peticiones a la API REST
   constructor() { }
 
   getAll(): Observable<User[]> {  //esto lo regresa el finAll en backend(capaREPO)
-    return this.http.get<User[]>(this.apiUrl); //devuelvo un observable de tipo any[]
+    return this.http.get<User[]>(this.apiUrl); 
   }             //get podria ser put, delete, etc depende.
+
+
+  save(user: User): Observable<User> {        //recibe un usuario
+    return this.http.post<User>(this.apiUrl, user)
+  }
+
+
 }

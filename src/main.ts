@@ -4,9 +4,11 @@ import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import cors from "cors";
 
 bootstrapApplication(AppComponent, {
   providers: [
+    
     provideHttpClient(), //para poder manejarlo a nivel de toda la app
     provideRouter(routes),//para poder rutear a nivel de toda la app
   ]

@@ -1,8 +1,10 @@
 export interface userDTO {
+    username?: string;
     name: string;
     lastname?: string;
     age: number | null;
     email?:string;
+    gender?: string;
     password?: string;
     confirmPassword?: string;
     languages?: Language[]
@@ -14,7 +16,7 @@ export interface Language{
 }
 
 export interface User {
-    id: number;
+    id?: number;
     username: string;
     names: string;
     lastnames: string;
