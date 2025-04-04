@@ -15,11 +15,11 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
- // Inyección del servicio Router para realizar la navegación
+ 
  private router = inject(Router);
 
- // Método para redirigir a la pantalla de usuarios
+ 
  verUsuarios() {
-   this.router.navigate(['/users']);  // Esto redirige a la ruta '/users'
+   this.router.navigate(['/users']);  
  }
 }

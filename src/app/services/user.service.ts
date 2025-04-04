@@ -23,7 +23,7 @@ export class UserService {
   }
 
 
-  login(user: Login): Observable<any>{
-    return this.http.post<any>(this.apiUrl + '/login', user);
+  login(user: Login): Observable<Login>{
+    return this.http.post<Login>(this.apiUrl + '/login', user);
   }
 }

@@ -19,7 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 })
 export class RegisterComponent {
 
-  private usersService = inject(UserService); //inyecta el comportamentiendo ed la clase UserService(osea getAll)
+  private usersService = inject(UserService); //iny
   private router = inject(Router);
   users: any[] = [];
 
@@ -80,7 +80,7 @@ export class RegisterComponent {
         console.log('data', data);
       
       });
-      this.userSubmitted.emit(this.userObj); //eniva datos al padre appComponent
+      this.userSubmitted.emit(this.userObj); //eniva datos al padre register.page
       this.userObj = {
         username: '',
         name: '',

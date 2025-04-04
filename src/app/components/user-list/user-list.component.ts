@@ -15,24 +15,24 @@ import { subscribeOn } from 'rxjs';
 })
 export class UserListComponent {
 
-  displayedColumns: string[] = ['username', 'lastnames', 'age', 'gender', 'email'] // Se define un arreglo con los nombres de las columnas que se van a mostrar en la tabla.
-  dataSource: User[] = [];                                                               // Se inicializa el arreglo de datos que se mostrará en la tabla (vacío al principio).
+  displayedColumns: string[] = ['username', 'lastnames', 'age', 'gender', 'email'] 
+  dataSource: User[] = [];                                                               
 
 
-  constructor(private userService: UserService) {}                                       // Se inyecta el servicio UserService para poder usarlo en esta clase.
+  constructor(private userService: UserService) {}                                       
 
-  ngOnInit(): void {                                                                    // ngOnInit se ejecuta al iniciar el componente, se usa para cargar datos.
-    this.cargarUsuarios();                                                               // Llama al método para cargar los usuarios desde el servicio.
+  ngOnInit(): void {                                                                   
+    this.cargarUsuarios();                                                               
   } 
 
-  cargarUsuarios(): void{                                                             // Método para obtener los usuarios a través del servicio UserService.
-    this.userService.getAll().subscribe(                                              // Se hace una solicitud HTTP para obtener los usuarios.
+  cargarUsuarios(): void{                                                            
+    this.userService.getAll().subscribe(                                             
       (users) => {
-        this.dataSource = users;                                                    // Si la solicitud es exitosa, asigna los usuarios a dataSource.
-        console.log('Usuarios cargados:', users);                                    // Muestra los datos en consola para verificar.
+        this.dataSource = users;                                                    
+        console.log('Usuarios cargados:', users);                                    
       },
       (error) => {
-        console.error('Error al obtener usuarios:', error);                          // Si ocurre un error, muestra el error en la consola.
+        console.error('Error al obtener usuarios:', error);                         
       } 
     );
   }

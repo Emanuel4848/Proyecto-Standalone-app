@@ -28,7 +28,7 @@ export class LoginComponent {
   constructor(private router: Router, private userService: UserService) {}
 
   login(){
-    //aca se llama al servicio de login con datos edl usuario
+ 
     this.userService.login(this.userObj).subscribe({
       next: (data) => {
         console.log('Login exitoso', data);

@@ -26,11 +26,19 @@ export class UserFormComponent {
   };
   
   @Output() userSubmitted = new EventEmitter<userDTO>();
+  passnoCoinciden: boolean = false;
+
+  validatePasswords() {
+    this.passnoCoinciden = this.userObj.password !== this.userObj.confirmPassword;
+  }
 
 
 
   submitForm() {
 
+    if (this.passnoCoinciden) {
+      return;
+    }
     
 
 
